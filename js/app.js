@@ -26,10 +26,27 @@ filterBtn.forEach(function(btn){
         
     })
 })
-
-
 })();
-
-
-
 // search innputs
+
+(function(){
+// target search box
+const search = document.getElementById('search-item');
+search.addEventListener('keyup', function(){
+    let value = search.value.toLowerCase().trim();
+    // console.log(value);
+    const items = document.querySelectorAll('.store-item');
+    items.forEach(function(item){
+        let type = item.dataset.item;
+        // console.log(type);
+        // console.log(typeof type);
+        // create if else statement
+        if (type.includes(value)){
+            item.style.display = 'block';
+        }
+        else {
+            item.style.display = 'none';
+        }
+    })
+});
+})();
