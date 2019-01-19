@@ -41,12 +41,23 @@ search.addEventListener('keyup', function(){
         // console.log(type);
         // console.log(typeof type);
         // create if else statement
-        if (type.includes(value)){
+        // if (type.includes(value)){
+        //     item.style.display = 'block';
+        // }
+        // else {
+        //     item.style.display = 'none';
+        // }
+        let length = value.length;
+        // console.log(length);
+        let match = type.slice(0, length);
+        if (value === match ){
             item.style.display = 'block';
-        }
+        } 
         else {
             item.style.display = 'none';
         }
+
+        
     })
 });
 })();
